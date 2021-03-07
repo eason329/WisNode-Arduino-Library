@@ -117,6 +117,10 @@ Server and serial console log:
 
 If the log does not display properly, it can be resolved by restarting the board.
 
+## Note
+
+This version of library added support for single-channel gateway (e.g. Dragino LG01-N). Please note that this type of gateway is NOT SUITABLE for LoRaWAN!
+
 ## Contact us
 
 If you have any questions, welcome to the forum.
