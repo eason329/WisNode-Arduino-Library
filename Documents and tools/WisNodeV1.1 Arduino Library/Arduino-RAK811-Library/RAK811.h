@@ -17,6 +17,7 @@
 #include "Arduino.h"
 
 // #define DEBUG_MODE
+// #define SINGLE_CHANNEL_MODE   //WARNING: Just for debug purpose, single-channel gateway is not suitable for LoRaWAN!
 
 class RAK811
 {
@@ -198,6 +199,13 @@ class RAK811
   */
   bool rk_setUARTConfig(int UartPort,int Baud);
 
+
+ /*STDB
+  * Set the channel for Single-Channel gateway that blocks all channels except "channel 0" (assume channels after "channel 8" is automatically off)
+  */
+  void rk_setChannel(void);
+  
+  
  /*
   * Send a raw command to the RAK811 module.
   * //Returns the raw string as received back from the RAK811.

@@ -462,6 +462,13 @@ bool RAK811::rk_setUARTConfig(int UartPort, int Baud)
   return true;
 }
 
+#if defined SINGLE_CHANNEL_MODE
+void RAK811::rk_setChannel(void)
+{
+  sendRawCommand(F("at+set_config=lora:ch_mask:1:0&lora:ch_mask:2:0&lora:ch_mask:3:0&lora:ch_mask:4:0&lora:ch_mask:5:0&lora:ch_mask:6:0&lora:ch_mask:7:0"));
+}
+#endif
+
 bool RAK811::sendRawCommand(String cmd)
 {
   while (_serial.available())
